@@ -20,17 +20,15 @@ RUN zypper refresh \
       sudo \
       which \
       hostname \
-      python3 \
-      python3-pip \
-      python3-wheel \
-      python3-PyYAML \
+      python311 \
+      python311-pip \
  && zypper clean -a
 
 # Upgrade pip to latest version.
 RUN pip3 install --upgrade pip
 
 # Install Ansible via Pip.
-RUN pip3 install $pip_packages
+RUN pip3.11 install $pip_packages
 
 # Disable requiretty.
 RUN sed -i -e 's/^\(Defaults\s*requiretty\)/#--- \1/'  /etc/sudoers
