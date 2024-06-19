@@ -20,6 +20,7 @@ RUN zypper refresh \
       sudo \
       which \
       hostname \
+      iproute \
       python3 \
       python3-pip \
       python3-wheel \
